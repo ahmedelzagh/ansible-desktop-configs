@@ -1,0 +1,30 @@
+- name: remove all games comes with debian gnome
+  tags: gnome,gnome-apps
+  apt:
+    name:
+      - gnome-2048
+      - aisleriot
+      - atomix
+      - gnome-chess
+      - five-or-more
+      - hitori iagno
+      - gnome-klotski
+      - lightsoff
+      - gnome-mahjongg
+      - gnome-mines
+      - gnome-nibbles
+      - quadrapassel
+      - four-in-a-row
+      - gnome-robots
+      - gnome-sudoku
+      - swell-foop
+      - tali
+      - gnome-taquin
+      - gnome-tetravex
+    purge: true
+    state: "absent"
+
+- name: Remove dependencies that are no longer required
+  tags: remove, apps
+  apt:
+    autoremove: true
