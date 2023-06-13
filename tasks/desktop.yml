@@ -11,7 +11,7 @@
 - name: gnome | appearance | copy wallpaper file(debian)
   tags: gnome,gnome-wallpaper
   copy:
-    src: files/gnome/wallpapers/debian-wallpaper
+    src: files/gnome/wallpapers/debian-wallpaper/
     dest: /usr/share/backgrounds/joy-inksplat-theme/wallpaper
     directory_mode:
     owner: root
