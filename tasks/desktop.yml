@@ -11,8 +11,8 @@
 - name: gnome | appearance | copy wallpaper file(debian)
   tags: gnome,gnome-wallpaper
   copy:
-    src: /files/gnome/wallpapers/debian-wallpaper/
-    dest: /usr/share/backgrounds/joy-inksplat-theme/wallpaper/
+    src: /files/gnome/wallpapers/debian-wallpaper
+    dest: /usr/share/backgrounds/joy-inksplat-theme/
     directory_mode:
     owner: root
     group: root
@@ -32,7 +32,7 @@
   become_user: aelzagh
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
-    value: "'file:///usr/share/backgrounds/joy-inksplat-theme/wallpaper/gnome-background.xml'"
+    value: "'file:///usr/share/backgrounds/joy-inksplat-theme/debian-wallpaper/gnome-background.xml'"
   when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
 - name: gnome | appearance | set wallpaper position
