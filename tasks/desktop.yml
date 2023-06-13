@@ -2,7 +2,7 @@
   tags: gnome,theme
   become_user: aelzagh
   dconf:
-    key: "org/gnome/desktop/interface/color-scheme"
+    key: "/org/gnome/desktop/interface/color-scheme"
     value: "'prefer-dark'"
 
 - name: gnome | appearance | copy wallpaper file(fedora)
