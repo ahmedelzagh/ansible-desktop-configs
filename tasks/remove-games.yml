@@ -21,6 +21,7 @@
       - tali
       - gnome-taquin
       - gnome-tetravex
+      - htop
     purge: true
     state: "absent"
 
