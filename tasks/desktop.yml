@@ -1,0 +1,43 @@
+- name: gnome | appearance | copy wallpaper file(fedora)
+  tags: gnome,gnome-wallpaper
+  copy:
+    src: /files/gnome/wallpapers/fedora-wallpaper.png
+    dest: /usr/share/backgrounds/fedora-wallpaper.png
+    owner: root
+    group: root
+    mode: 0644
+  when: ansible_distribution == "Fedora"
+
+- name: gnome | appearance | copy wallpaper file(debian)
+  tags: gnome,gnome-wallpaper
+  copy:
+    src: /files/gnome/wallpapers/debian-wallpaper/
+    dest: /usr/share/backgrounds/joy-inksplat-theme/wallpaper/
+    directory_mode:
+    owner: root
+    group: root
+    mode: 0644
+  when: ansible_distribution == ["Debian", "Ubuntu", "Pop!_OS"]
+
+- name: gnome | appearance | set wallpaper(fedora)
+  tags: gnome,gnome-wallpaper
+  become_user: aelzagh
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/fedora-wallpaper.png'"
+  when: ansible_distribution == "Fedora"
+
+- name: gnome | appearance | set wallpaper(debian)
+  tags: gnome,gnome-wallpaper
+  become_user: aelzagh
+  dconf:
+    key: "/org/gnome/desktop/background/picture-uri"
+    value: "'file:///usr/share/backgrounds/joy-inksplat-theme/wallpaper/gnome-background.xml'"
+  when: ansible_distribution == ["Debian", "Ubuntu", "Pop!_OS"]
+
+- name: gnome | appearance | set wallpaper position
+  tags: gnome,gnome-wallpaper
+  become_user: aelzagh
+  dconf:
+    key: "/org/gnome/desktop/background/picture-options"
+    value: "'zoom'"
