@@ -5,7 +5,7 @@
 - name: change user shell to zsh
   become: yes
   user:
-    name: "aelzagh"
+    name: aelzagh
     shell: /bin/zsh
 
 - name: copy configuration to user home
