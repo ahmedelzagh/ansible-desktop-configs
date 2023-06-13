@@ -1,7 +1,7 @@
 - name: gnome | appearance | copy wallpaper file(fedora)
   tags: gnome,gnome-wallpaper
   copy:
-    src: /files/gnome/wallpapers/fedora-wallpaper.png
+    src: files/gnome/wallpapers/fedora-wallpaper.png
     dest: /usr/share/backgrounds/fedora-wallpaper.png
     owner: root
     group: root
