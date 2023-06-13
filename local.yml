@@ -16,7 +16,7 @@
       when: ansible_distribution in ["Debian", "Ubuntu"]
 
   tasks:
-    - import_tasks: tasks/users.yml
+    # - import_tasks: tasks/users.yml
     - import_tasks: tasks/packages.yml
     - import_tasks: tasks/desktop.yml
     - import_tasks: tasks/remove-games.yml
