@@ -1,5 +1,15 @@
+- name: installing zsh
+  apt:
+    name: zsh
+
+- name: change user shell to zsh
+  become: yes
+  user:
+    name: "aelzagh"
+    shell: /bin/zsh
+
 - name: copy configuration to user home
-  tags: user,configs,bash
+  tags: user,configs,shell
   copy:
     src: files/user-confs/myzsh.tar.gz
     dest: /home/aelzagh/myzsh.tar.gz
