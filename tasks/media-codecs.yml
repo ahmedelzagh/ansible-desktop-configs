@@ -1,0 +1,5 @@
+- name: Install media codecs package and vlc
+  apt:
+    name:
+      - libavcodec-extra
+      - vlc
