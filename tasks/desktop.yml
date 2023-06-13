@@ -17,7 +17,7 @@
     owner: root
     group: root
     mode: 0644
-  when: ansible_distribution == ["Debian", "Ubuntu", "Pop!_OS"]
+  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
 - name: gnome | appearance | set wallpaper(fedora)
   tags: gnome,gnome-wallpaper
@@ -33,7 +33,7 @@
   dconf:
     key: "/org/gnome/desktop/background/picture-uri"
     value: "'file:///usr/share/backgrounds/joy-inksplat-theme/wallpaper/gnome-background.xml'"
-  when: ansible_distribution == ["Debian", "Ubuntu", "Pop!_OS"]
+  when: ansible_distribution in ["Debian", "Ubuntu", "Pop!_OS"]
 
 - name: gnome | appearance | set wallpaper position
   tags: gnome,gnome-wallpaper
