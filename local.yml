@@ -9,6 +9,7 @@
 
   tasks:
     # - import_tasks: tasks/users.yml
+    - import_tasks: tasks/configure-repos.yml
     - import_tasks: tasks/packages.yml
     - import_tasks: tasks/media-codecs.yml
     - import_tasks: tasks/remove-games.yml
