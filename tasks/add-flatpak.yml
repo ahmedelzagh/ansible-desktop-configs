@@ -1,10 +1,12 @@
 - name: adding faltpak to debian
   apt:
     name:
-      - flatpack
+      - flatpak
+  when: ansible_distribution == "Debian"
 
 - name: Add the Gnome flatpak remote to the system installation
   community.general.flatpak_remote:
     name: gnome
     state: present
     flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+  when: ansible_distribution == "Debian"
