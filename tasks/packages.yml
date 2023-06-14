@@ -2,6 +2,7 @@
   package:
     name:
       - htop
+      - python3-psutil
       - neofetch
       - libsensors-dev
     state: latest

@@ -3,14 +3,13 @@
   connection: local
   become: true
   pre_tasks:
-    - name: Copy from Local to Remote Target Machine with 'copy'
+    - name: configure debian apt repos
       copy:
         src: files/etc/sources.list
         dest: /etc/apt/sources.list
         owner: root
         group: root
         backup: yes
-      when: ansible_distribution = "Debian"
 
     - name: update packages
       package:
@@ -23,4 +22,5 @@
     - import_tasks: tasks/remove-games.yml
     - import_tasks: tasks/appearance.yml
     - import_tasks: tasks/zsh-confs.yml
+    - import_tasks: tasks/add-flatpak.yml
     - import_tasks: tasks/add-motd.yml

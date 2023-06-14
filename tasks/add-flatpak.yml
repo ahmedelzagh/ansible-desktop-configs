@@ -1,0 +1,10 @@
+- name: adding faltpak to debian
+  apt:
+    name:
+      - flatpack
+
+- name: Add the Gnome flatpak remote to the system installation
+  community.general.flatpak_remote:
+    name: gnome
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
