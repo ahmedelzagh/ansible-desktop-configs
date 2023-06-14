@@ -18,8 +18,8 @@
 - name: gnome | appearance | copy wallpaper file(debian)
   tags: gnome,gnome-wallpaper
   copy:
-    src: files/gnome/wallpapers/debian-wallpaper/
-    dest: /usr/share/backgrounds/joy-inksplat-theme/wallpaper
+    src: files/gnome/wallpapers/debian-wallpaper.svg
+    dest: /usr/share/backgrounds/debian-wallpaper.svg
     directory_mode:
     owner: root
     group: root
@@ -31,7 +31,7 @@
   become_user: aelzagh
   dconf:
     key: "/org/gnome/desktop/background/picture-uri-dark"
-    value: "'file:///usr/share/backgrounds/joy-inksplat-theme/wallpaper/fedora-wallpaper.png'"
+    value: "'file:///usr/share/backgrounds/fedora-wallpaper.png'"
   when: ansible_distribution == "Fedora"
 
 - name: gnome | appearance | set wallpaper(debian)
@@ -39,7 +39,7 @@
   become_user: aelzagh
   dconf:
     key: "/org/gnome/desktop/background/picture-uri-dark"
-    value: "'file:///usr/share/backgrounds/joy-inksplat-theme/wallpaper/gnome-background.xml'"
+    value: "'file:///usr/share/backgrounds/debian-wallpaper.svg'"
   when: ansible_os_family == "Debian"
 
 - name: gnome | appearance | set wallpaper position
