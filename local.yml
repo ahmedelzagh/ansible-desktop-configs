@@ -3,12 +3,9 @@
   connection: local
   become: true
 
-- name: pre-run | update package cache
-  tags: always
-  apt:
-    name:
-      - htop
-      - neofetch
+- name: update packages
+  package:
+    update_cache: yes
 
   tasks:
     # - import_tasks: tasks/users.yml
