@@ -4,8 +4,8 @@
 
     - name: pre-run | update package cache
       tags: always
-      package: update_cache=yes
-      changed_when: False
+      package:
+        update_cache: yes
 
   tasks:
     # - import_tasks: tasks/users.yml
