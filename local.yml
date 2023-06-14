@@ -12,5 +12,5 @@
     - import_tasks: tasks/packages.yml
     - import_tasks: tasks/media-codecs.yml
     - import_tasks: tasks/remove-games.yml
-    - import_tasks: tasks/desktop.yml
+    - import_tasks: tasks/appearance.yml
     - import_tasks: tasks/zsh-confs.yml
