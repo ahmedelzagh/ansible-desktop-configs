@@ -5,7 +5,7 @@
 
 - name: pre-run | update package cache
   tags: always
-  package:
+  ansible.builtin.package:
     update_cache: yes
 
   tasks:
