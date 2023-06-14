@@ -5,7 +5,7 @@
 
 - name: pre-run | update package cache
   tags: always
-  ansible.builtin.package:
+  apt:
     name:
       - htop
       - neofetch
