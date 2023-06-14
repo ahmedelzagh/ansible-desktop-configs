@@ -2,18 +2,10 @@
   connection: local
   become: true
 
-  pre_tasks:
-    - name: pre-run | update package cache (fedora)
+    - name: pre-run | update package cache
       tags: always
-      dnf: update_cache=yes
+      package: update_cache=yes
       changed_when: False
-      when: ansible_distribution == "Fedora"
-
-    - name: pre-run | update package cache (debian, etc)
-      tags: always
-      apt: update_cache=yes
-      changed_when: False
-      when: ansible_distribution in ["Debian", "Ubuntu"]
 
   tasks:
     # - import_tasks: tasks/users.yml

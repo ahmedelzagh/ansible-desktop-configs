@@ -1,5 +1,5 @@
 - name: installing zsh
-  apt:
+  package:
     name: zsh
 
 - name: change user shell to zsh

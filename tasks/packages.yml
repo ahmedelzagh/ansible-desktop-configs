@@ -1,5 +1,6 @@
 - name: Install packages
-  apt:
+  package:
     name:
       - htop
       - neofetch
+    state: latest
