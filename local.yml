@@ -10,6 +10,7 @@
         owner: root
         group: root
         backup: yes
+      when: ansible_distribution == "Debian"
 
     - name: update packages
       package:
