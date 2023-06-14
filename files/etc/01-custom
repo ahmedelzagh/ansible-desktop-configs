@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "GENERAL SYSTEM INFORMATION"
+# Show system info using neofetch
+neofetch

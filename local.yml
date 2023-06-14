@@ -15,3 +15,4 @@
     - import_tasks: tasks/remove-games.yml
     - import_tasks: tasks/appearance.yml
     - import_tasks: tasks/zsh-confs.yml
+    - import_tasks: tasks/add-motd.yml

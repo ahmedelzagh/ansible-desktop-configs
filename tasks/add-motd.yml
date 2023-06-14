@@ -1,0 +1,8 @@
+- name: add message of the day
+  tags: etc,motd
+  copy:
+    src: files/etc/01-custom
+    dest: /etc/update-motd.d/01-custom
+    owner: root
+    group: root
+    mode: 0644
