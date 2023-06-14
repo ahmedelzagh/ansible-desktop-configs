@@ -8,16 +8,9 @@
     name: aelzagh
     shell: /bin/zsh
 
-- name: copy configuration to user home
-  tags: user,configs,shell
-  copy:
+- name: unarchive the configuration to user home
+  unarchive:
     src: files/user-confs/myzsh.tar.gz
-    dest: /home/aelzagh/myzsh.tar.gz
+    dest: /home/aelzagh/
     owner: aelzagh
     group: aelzagh
-    mode: 0644
-
-- name: unarchive the configuration
-  unarchive:
-    src: /home/aelzagh/myzsh.tar.gz
-    dest: /home/aelzagh/
