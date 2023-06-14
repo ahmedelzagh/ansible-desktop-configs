@@ -5,4 +5,4 @@
     dest: /etc/update-motd.d/01-custom
     owner: root
     group: root
-    mode: 0644
+    mode: 0701
