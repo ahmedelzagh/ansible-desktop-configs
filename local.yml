@@ -3,13 +3,21 @@
   connection: local
   become: true
   pre_tasks:
+    - name: Copy from Local to Remote Target Machine with 'copy'
+      copy:
+        src: files/etc/sources.list
+        dest: /etc/apt/sources.list
+        owner: root
+        group: root
+        backup: yes
+      when: ansible_distribution = "Debian"
+
     - name: update packages
       package:
         update_cache: yes
 
   tasks:
     # - import_tasks: tasks/users.yml
-    - import_tasks: tasks/configure-repos.yml
     - import_tasks: tasks/packages.yml
     - import_tasks: tasks/media-codecs.yml
     - import_tasks: tasks/remove-games.yml
