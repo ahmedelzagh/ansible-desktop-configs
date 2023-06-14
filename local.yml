@@ -2,10 +2,10 @@
 - hosts: localhost
   connection: local
   become: true
-
-- name: update packages
-  package:
-    update_cache: yes
+  pre_tasks:
+    - name: update packages
+      package:
+        update_cache: yes
 
   tasks:
     # - import_tasks: tasks/users.yml
