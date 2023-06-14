@@ -6,7 +6,9 @@
 - name: pre-run | update package cache
   tags: always
   ansible.builtin.package:
-    update_cache: yes
+    name:
+      - htop
+      - neofetch
 
   tasks:
     # - import_tasks: tasks/users.yml
