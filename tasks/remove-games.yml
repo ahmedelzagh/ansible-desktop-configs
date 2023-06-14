@@ -1,4 +1,4 @@
-- name: remove all games comes with debian gnome
+- name: remove all games and its dependencies (debian)
   tags: gnome,gnome-apps
   apt:
     name:
@@ -22,9 +22,6 @@
       - gnome-taquin
       - gnome-tetravex
     purge: true
-    state: "absent"
-
-- name: Remove dependencies that are no longer required
-  tags: remove, apps
-  apt:
     autoremove: true
+    state: "absent"
+  when: ansible_os_family == "Debian"
